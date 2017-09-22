@@ -1,0 +1,20 @@
+*This list is for me to keep track of everything in the game*
+
+ITEMS
+
+Weapons
+tutorialSword 4
+rustySword 2
+
+Armor
+tutorialArmor 3
+
+Food
+tutorialFood 5
+
+ENEMIES
+tutorialEnemy 10, 3, 3, 10
+
+ACHIEVEMENTS
+Time Traveler
+Training Wheels
