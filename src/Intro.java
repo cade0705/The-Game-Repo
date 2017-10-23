@@ -25,9 +25,7 @@ public class Intro
        counter = 0;
        boolean correctPlayerInfo = false;
        playerName = "";
-       
-       WindowManager.playerNameField.setVisible(true);
-       WindowManager.changeText("<html> Climbing the Mountain of Mild Doom you draw your sword, sweat trickling down your face <br> Wait a minute, that story seems a bit too cliche to me <br> Perhaps the player would be interested in the creation of this story <br> Hello valued player, please enter your name in the text field below <br> hit enter when you are done</html>");
+     
      
        /*correctPlayerInfo = false;
        
