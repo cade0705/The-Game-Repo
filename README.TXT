@@ -1,11 +1,14 @@
 PROJECT TITLE: The Game
-CURRENT VERSION: Dev Build 1.3.1 (GUI Overhaul)
+CURRENT VERSION: Dev Build 1.3.2 (GUI Redeux)
 AUTHOR: Cade Culbertson
 SPECIAL THANKS: Austin Stead, David Detweiler, Stackoverflow.com
 Any update with a * next to it is a major one
 
 Release Notes
-Dev Build 1.3.1*****
+Dev Build 1.3.2*****
+-Transfereed everything to WindowBuilder
+
+Dev Build 1.3.1 (GUI Overhaul)*****
 -Overhauld code to display EVERYTHING in a GUI window
 
 Dev Build 1.3 (GUI)*****
