@@ -31,6 +31,9 @@ public class WindowManager extends JFrame {
 	private JButton creditsButton;
 	private JButton startButton;
 	private JLabel titleLabel;
+	private JLabel cadeCreditLabel;
+	private JLabel specialThanksLabel;
+	private JButton backToTitleButton;
 
 	/**
 	 * Launch the application.
@@ -69,6 +72,7 @@ public class WindowManager extends JFrame {
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -83,29 +87,60 @@ public class WindowManager extends JFrame {
 		creditsButton = new JButton("Credits");
 		
 		creditsButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		
+		cadeCreditLabel = new JLabel("Programming / Design / Story: Cade Culbertson");
+		cadeCreditLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		cadeCreditLabel.setVisible(false);
+		
+		specialThanksLabel = new JLabel("Special Thanks: David Detweiler, Austin Stead, Stackoverflow.com");
+		specialThanksLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		specialThanksLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		specialThanksLabel.setVisible(false);
+		
+		backToTitleButton = new JButton("Back To Title Screen");
+		backToTitleButton.setVisible(false);
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(179)
+					.addGap(99)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(50)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(creditsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+								.addComponent(startButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))
+							.addGap(268))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(specialThanksLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(cadeCreditLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 592, Short.MAX_VALUE))
+							.addGap(186))))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(160)
 					.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 427, Short.MAX_VALUE)
-					.addGap(168))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap(281, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(startButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(creditsButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE))
-					.addGap(272))
+					.addGap(290))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(backToTitleButton, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(609, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(titleLabel)
-					.addGap(50)
+					.addGap(11)
+					.addComponent(cadeCreditLabel)
+					.addGap(2)
+					.addComponent(specialThanksLabel)
+					.addGap(26)
 					.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-					.addGap(40)
+					.addGap(30)
 					.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(183, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+					.addComponent(backToTitleButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
 		
@@ -124,7 +159,23 @@ public class WindowManager extends JFrame {
 				creditsButton.setVisible(false);
 				startButton.setVisible(false);
 				titleLabel.setVisible(false);
+				cadeCreditLabel.setVisible(true);
+				specialThanksLabel.setVisible(true);
+				backToTitleButton.setVisible(true);
 			}
-		});
+		});//end creditsButton Action Listener
+		
+		backToTitleButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				backToTitleButton.setVisible(false);
+				cadeCreditLabel.setVisible(false);
+				specialThanksLabel.setVisible(false);
+				titleLabel.setVisible(true);
+				startButton.setVisible(true);
+				creditsButton.setVisible(true);
+			}
+		});//end backToTitleButton Action Listener
 	} //end createEvents()
 }
