@@ -26,14 +26,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class WindowManager extends JFrame {
-
-	private JPanel contentPane;
 	private JButton creditsButton;
 	private JButton startButton;
-	private JLabel titleLabel;
+	public static JLabel titleLabel;
 	private JLabel cadeCreditLabel;
 	private JLabel specialThanksLabel;
 	private JButton titleButton;
+	public static JTextField textField = new JTextField();
+	public static JTextField userInputField = new JTextField();
+	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
@@ -102,22 +103,24 @@ public class WindowManager extends JFrame {
 		
 		JLabel versionLabel = new JLabel("Dev Build 1.3.2");
 		
-		JTextField textField = new JTextField();
 		textField.setColumns(10);
 		textField.setVisible(false);
+		
+		userInputField.setColumns(10);
+		userInputField.setVisible(false);
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(99)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addComponent(specialThanksLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
 								.addComponent(cadeCreditLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 619, Short.MAX_VALUE))
 							.addGap(186))
-						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(50)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(creditsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
@@ -135,7 +138,11 @@ public class WindowManager extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(310)
 					.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 163, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(311, Short.MAX_VALUE))
+					.addContainerGap(431, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(233)
+					.addComponent(userInputField, GroupLayout.PREFERRED_SIZE, 331, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(220, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -155,7 +162,9 @@ public class WindowManager extends JFrame {
 						.addComponent(versionLabel))
 					.addGap(0)
 					.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-					.addGap(57)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(userInputField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(31)
 					.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
 					.addGap(0, 0, Short.MAX_VALUE))
 		);
@@ -201,9 +210,22 @@ public class WindowManager extends JFrame {
 			{
 				startButton.setVisible(false);
 				creditsButton.setVisible(false);
-				titleLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 35));
+				titleLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
 				Intro.start();
-			}//end startButton Action Listener
-		});
+			}
+		});//end startButton Action Listener
+		
+		textField.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				Intro.playerName = textField.getText();
+				//System.out.println(Intro.playerName);
+				
+					textField.setVisible(false);
+					titleLabel.setText("So you're name is " + Intro.playerName + "?");
+					userInputField.setVisible(true);
+			}
+		});//end textField Action Listener
 	} //end createEvents()
 }
