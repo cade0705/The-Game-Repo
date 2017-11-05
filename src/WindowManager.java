@@ -100,6 +100,8 @@ public class WindowManager extends JFrame {
 		backToTitleButton = new JButton("Back To Title Screen");
 		backToTitleButton.setVisible(false);
 		
+		JLabel versionLabel = new JLabel("Dev Build 1.3.2");
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -118,26 +120,30 @@ public class WindowManager extends JFrame {
 								.addComponent(cadeCreditLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 592, Short.MAX_VALUE))
 							.addGap(186))))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(160)
+					.addComponent(versionLabel)
+					.addGap(114)
 					.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 427, Short.MAX_VALUE)
 					.addGap(290))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(backToTitleButton, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(609, Short.MAX_VALUE))
+					.addContainerGap(702, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(titleLabel)
-					.addGap(11)
-					.addComponent(cadeCreditLabel)
-					.addGap(2)
-					.addComponent(specialThanksLabel)
-					.addGap(26)
-					.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-					.addGap(30)
-					.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(titleLabel)
+							.addGap(11)
+							.addComponent(cadeCreditLabel)
+							.addGap(2)
+							.addComponent(specialThanksLabel)
+							.addGap(26)
+							.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+							.addGap(30)
+							.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
+						.addComponent(versionLabel))
 					.addPreferredGap(ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
 					.addComponent(backToTitleButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
@@ -177,5 +183,16 @@ public class WindowManager extends JFrame {
 				creditsButton.setVisible(true);
 			}
 		});//end backToTitleButton Action Listener
+		
+		startButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				titleLabel.setVisible(false);
+				startButton.setVisible(false);
+				creditsButton.setVisible(false);
+				Intro.start();
+			}//end startButton Action Listener
+		});
 	} //end createEvents()
 }
