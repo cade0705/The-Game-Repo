@@ -33,7 +33,7 @@ public class WindowManager extends JFrame {
 	private JLabel titleLabel;
 	private JLabel cadeCreditLabel;
 	private JLabel specialThanksLabel;
-	private JButton backToTitleButton;
+	private JButton titleButton;
 
 	/**
 	 * Launch the application.
@@ -97,10 +97,14 @@ public class WindowManager extends JFrame {
 		specialThanksLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		specialThanksLabel.setVisible(false);
 		
-		backToTitleButton = new JButton("Back To Title Screen");
-		backToTitleButton.setVisible(false);
+		titleButton = new JButton("Back To Title Screen");
+		titleButton.setVisible(false);
 		
 		JLabel versionLabel = new JLabel("Dev Build 1.3.2");
+		
+		JTextField textField = new JTextField();
+		textField.setColumns(10);
+		textField.setVisible(false);
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -109,30 +113,34 @@ public class WindowManager extends JFrame {
 					.addGap(99)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(specialThanksLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
+								.addComponent(cadeCreditLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 619, Short.MAX_VALUE))
+							.addGap(186))
+						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
 							.addGap(50)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(creditsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
-								.addComponent(startButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))
-							.addGap(268))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(specialThanksLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(cadeCreditLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 592, Short.MAX_VALUE))
-							.addGap(186))))
+								.addComponent(creditsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+								.addComponent(startButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))
+							.addGap(268))))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(versionLabel)
 					.addGap(114)
 					.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 427, Short.MAX_VALUE)
 					.addGap(290))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(backToTitleButton, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(702, Short.MAX_VALUE))
+					.addGap(226)
+					.addComponent(textField, GroupLayout.PREFERRED_SIZE, 329, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(349, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(310)
+					.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 163, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(311, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(titleLabel)
 							.addGap(11)
@@ -141,12 +149,15 @@ public class WindowManager extends JFrame {
 							.addComponent(specialThanksLabel)
 							.addGap(26)
 							.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-							.addGap(30)
-							.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(61))
 						.addComponent(versionLabel))
-					.addPreferredGap(ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-					.addComponent(backToTitleButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+					.addGap(0)
+					.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+					.addGap(57)
+					.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+					.addGap(0, 0, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 		
@@ -167,15 +178,15 @@ public class WindowManager extends JFrame {
 				titleLabel.setVisible(false);
 				cadeCreditLabel.setVisible(true);
 				specialThanksLabel.setVisible(true);
-				backToTitleButton.setVisible(true);
+				titleButton.setVisible(true);
 			}
 		});//end creditsButton Action Listener
 		
-		backToTitleButton.addActionListener(new ActionListener() 
+		titleButton.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				backToTitleButton.setVisible(false);
+				titleButton.setVisible(false);
 				cadeCreditLabel.setVisible(false);
 				specialThanksLabel.setVisible(false);
 				titleLabel.setVisible(true);
@@ -188,9 +199,9 @@ public class WindowManager extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				titleLabel.setVisible(false);
 				startButton.setVisible(false);
 				creditsButton.setVisible(false);
+				titleLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 35));
 				Intro.start();
 			}//end startButton Action Listener
 		});
