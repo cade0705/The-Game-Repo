@@ -25,7 +25,7 @@ public class Intro
 	{
 		playerName = "";
 		textLabel.setText("<html>Let's see. Ah, Here we go. Welcome valued player to The Game! I am so very excited to get started. Please enter your name in the text box below and hit \"ENTER\"</html>");
-		playerResponseField.setVisible(true);
+		playerResponseField.setVisible(true); 
 	}//end getInfo()
 
 	public static void choosePath()
