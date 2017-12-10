@@ -36,6 +36,7 @@ public class WindowManager extends JFrame {
 	public static JTextField textField = new JTextField();
 	public static JTextField userInputField = new JTextField();
 	private JPanel contentPane;
+	public int inputCounter;
 
 	/**
 	 * Launch the application.
@@ -111,72 +112,72 @@ public class WindowManager extends JFrame {
 
 		userInputField.setColumns(10);
 		userInputField.setVisible(false);
-		
+
 		nextButton = new JButton("Next");
 		nextButton.setVisible(false);
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(99)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(specialThanksLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
-								.addComponent(cadeCreditLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 619, Short.MAX_VALUE))
-							.addGap(186))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(50)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(creditsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
-								.addComponent(startButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))
-							.addGap(268))))
+						.addGap(99)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+												.addComponent(specialThanksLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
+												.addComponent(cadeCreditLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 619, Short.MAX_VALUE))
+										.addGap(186))
+								.addGroup(gl_contentPane.createSequentialGroup()
+										.addGap(50)
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addComponent(creditsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+												.addComponent(startButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))
+										.addGap(268))))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(versionLabel)
-					.addGap(114)
-					.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 427, Short.MAX_VALUE)
-					.addGap(290))
+						.addComponent(versionLabel)
+						.addGap(114)
+						.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 427, Short.MAX_VALUE)
+						.addGap(290))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(226)
-					.addComponent(textField, GroupLayout.PREFERRED_SIZE, 329, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(349, Short.MAX_VALUE))
+						.addGap(226)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 329, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(349, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(310)
-							.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 163, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(nextButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(233)
-							.addComponent(userInputField, GroupLayout.PREFERRED_SIZE, 331, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(288, Short.MAX_VALUE))
-		);
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+										.addGap(310)
+										.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 163, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(nextButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+										.addGap(233)
+										.addComponent(userInputField, GroupLayout.PREFERRED_SIZE, 331, GroupLayout.PREFERRED_SIZE)))
+						.addContainerGap(288, Short.MAX_VALUE))
+				);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(titleLabel)
-							.addGap(11)
-							.addComponent(cadeCreditLabel)
-							.addGap(2)
-							.addComponent(specialThanksLabel)
-							.addGap(26)
-							.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(61))
-						.addComponent(versionLabel))
-					.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(userInputField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(31)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE, false)
-						.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
-						.addComponent(nextButton, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)))
-		);
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_contentPane.createSequentialGroup()
+										.addComponent(titleLabel)
+										.addGap(11)
+										.addComponent(cadeCreditLabel)
+										.addGap(2)
+										.addComponent(specialThanksLabel)
+										.addGap(26)
+										.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addGap(61))
+								.addComponent(versionLabel))
+						.addComponent(creditsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(userInputField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGap(31)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE, false)
+								.addComponent(titleButton, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nextButton, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)))
+				);
 		contentPane.setLayout(gl_contentPane);
 
 		setTitle("The Game");
@@ -232,31 +233,62 @@ public class WindowManager extends JFrame {
 				//System.out.println(Intro.playerName);
 
 				textField.setVisible(false);
-				titleLabel.setText("So you're name is " + Intro.playerName + "?");
+				titleLabel.setText("So your name is " + Intro.playerName + "?");
 				userInputField.setVisible(true);
 			}
 
 		});//end textField Action Listener
-		
 
+		inputCounter = 0;
 		userInputField.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				String nameConfirmation = userInputField.getText();
-				if(nameConfirmation.toLowerCase().equals("yes"))
+				if(inputCounter == 0)
 				{
-					userInputField.setVisible(false);
-				}
+					String nameConfirmation = userInputField.getText();
+					if(nameConfirmation.toLowerCase().equals("yes"))
+					{
+						userInputField.setVisible(false);
+					}
+	
+					else
+					{
+						userInputField.setVisible(false);
+						titleLabel.setText("<html>Well too bad. Game narrators have tight schedules and I don't have time for you to misspell your name again.</html>");
+					}
+					inputCounter++;
+					System.out.println("input coutner is now at: " + inputCounter);
+					nextButton.setVisible(true);
+				}//end inputCounterIf
 				
-				else
+				else if(inputCounter == 1)
 				{
-					userInputField.setVisible(false);
-					titleLabel.setText("<html>Well too bad. Game narrators have tight schedules and I don't have time for you to misspell your name again.</html>");
+					 String wantTutorial = userInputField.getText();
+					 if(wantTutorial.toLowerCase().equals("yes"))
+					 {
+						 Intro.tutorial();
+					 }
+					 else
+					 {
+						 Intro.choosePath();
+					 }
 				}
-				nextButton.setVisible(true);
-			}
+			}//end inputCounter if
 
 		});//end userInputField Action Listener
+
+		nextButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				nextButton.setVisible(false);
+				userInputField.setVisible(true);
+				userInputField.setText("");
+				titleLabel.setText("<html>Would you like to take the tutorial?</html>");
+			}
+
+		});//end nextButton Action Listener
+
 	} //end createEvents()
 }

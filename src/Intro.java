@@ -28,6 +28,11 @@ public class Intro
 		playerResponseField.setVisible(true); 
 	}//end getInfo()
 
+	public static void tutorial()
+	{
+		textLabel.setText("Insert Tutorial Here");
+	}
+	
 	public static void choosePath()
 	{
 
