@@ -10,8 +10,8 @@ import java.util.Timer;
 public class Intro
 {
 	//Class Variables
-	public static JLabel textLabel = WindowManager.titleLabel;
-	public static JTextField playerResponseField = WindowManager.textField;
+	public static JLabel textLabel = Window_Manager.titleLabel;
+	public static JTextField playerResponseField = Window_Manager.textField;
 	public static String playerName;
 	public static Player thePlayer;
 
@@ -30,9 +30,11 @@ public class Intro
 
 	public static void tutorial()
 	{
-		textLabel.setText("Insert Tutorial Here");
+		Window_Manager.inputCounter = "tutorialClickTwo";
+		textLabel.setText("<html>Before you begin your Journey in this simulated world, there are a few things that you must know</html>");
+		
 	}
-	
+
 	public static void choosePath()
 	{
 

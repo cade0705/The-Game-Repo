@@ -142,7 +142,7 @@ public class Player
         return output;
     }
     
-    public void addXP(int XPAdded) throws InterruptedException
+    /*public void addXP(int XPAdded) throws InterruptedException
     {
         text = ("You gained " + XPAdded + " XP"); 
         charText = text.toCharArray(); print(charText); delay(700);
@@ -200,27 +200,6 @@ public class Player
     {
        String output = "Name: " + name + "\nHP: " + HP + "\nXP: " + XP + "\nLVL: " + LVL;
        return output;
-    }
-    
-    public static void print(char[] chars) throws InterruptedException
-    {
-       for(int i = 0; i < chars.length; i++)
-       {
-           System.out.print(chars[i]);
-           Thread.sleep(65);
-       }
-       System.out.println();
-    }
-   
-    public static void delay(int millis)
-    {
-       try
-       {
-           Thread.sleep(millis);
-       }
-       catch(InterruptedException exp)
-       {
-           System.out.println("Something went wrong");
-       }
-    }
+    }*/
 }
+   
