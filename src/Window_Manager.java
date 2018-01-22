@@ -28,7 +28,7 @@ import java.awt.event.ActionEvent;
 public class Window_Manager extends JFrame {
 	private JButton creditsButton;
 	private JButton startButton;
-	private JButton nextButton;
+	public static JButton nextButton;
 	public static JLabel titleLabel;
 	private JLabel cadeCreditLabel;
 	private JLabel specialThanksLabel;
@@ -36,7 +36,7 @@ public class Window_Manager extends JFrame {
 	public static JTextField textField = new JTextField();
 	public static JTextField userInputField = new JTextField();
 	private JPanel contentPane;
-	public static String inputCounter;
+	private String inputCounter;
 
 	/**
 	 * Launch the application.
@@ -268,12 +268,10 @@ public class Window_Manager extends JFrame {
 					String wantTutorial = userInputField.getText();
 					if(wantTutorial.toLowerCase().equals("yes"))
 					{
+						inputCounter = "tutorialClickTwo";
 						userInputField.setVisible(false);
-						Intro.tutorial();
-					}
-					else
-					{
-						Intro.choosePath();
+						titleLabel.setText("<html>Before you begin your Journey in this simulated world, there are a few things that you must know</html>");
+						nextButton.setVisible(true);
 					}
 				}
 			}//end tutorialClick
@@ -294,8 +292,24 @@ public class Window_Manager extends JFrame {
 				
 				else if(inputCounter.equals("tutorialClickTwo"))
 				{
-					
+					System.out.println(inputCounter);
+					titleLabel.setText("<html>This game is just like any other RPG out there, but without any fancy graphics. And like other games of the same genre, dear player, there is a battle system!</html>");
+					inputCounter = "tutorialClickThree";
 				}
+				
+				else if(inputCounter.equals("tutorialClickThree"))
+				{
+					System.out.println(inputCounter);
+					titleLabel.setText("<html>Now, let me think. What's an enemy that I should spawn that can't kill you instantly? Ah, yes! This will do the trick!</html>");
+					inputCounter = "tutorialClickFour";
+				}
+				
+				else if(inputCounter.equals("tutorialClickFour"))
+				{
+					System.out.println(inputCounter);
+					setVisible(false);
+				}
+				
 			}
 
 		});//end nextButton Action Listener

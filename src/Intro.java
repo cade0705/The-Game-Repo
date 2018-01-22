@@ -15,6 +15,7 @@ public class Intro
 	public static String playerName;
 	public static Player thePlayer;
 
+
 	public static void start() 
 	{
 		getInfo();
@@ -28,12 +29,6 @@ public class Intro
 		playerResponseField.setVisible(true); 
 	}//end getInfo()
 
-	public static void tutorial()
-	{
-		Window_Manager.inputCounter = "tutorialClickTwo";
-		textLabel.setText("<html>Before you begin your Journey in this simulated world, there are a few things that you must know</html>");
-		
-	}
 
 	public static void choosePath()
 	{
