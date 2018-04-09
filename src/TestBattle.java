@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class TestBattle
 {
-    public static void test(String[] args) throws InterruptedException
+    public static void test() throws InterruptedException
     {       
         Weapon Sword1 = new Weapon("Sword1", "Weapon", 4);
         Weapon Sword2 = new Weapon("Sword2", "Weapon", 8);

@@ -319,7 +319,7 @@ public class Battle
     {
         text = (enemyName + " was defeated!");
         charText = text.toCharArray(); print(charText); delay(700);  
-        //player.addXP(enemyXP);
+        player.addXP(enemyXP);
     }
         
     public static void displayStats() throws InterruptedException

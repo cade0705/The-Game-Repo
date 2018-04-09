@@ -372,7 +372,7 @@ public class TutorialBattle
         charText = text.toCharArray(); print(charText); delay(700);  
         text = ("It looks like you earned 10 XP, which is enough to level up to LVL 1!");
         charText = text.toCharArray(); print(charText); delay(700);  
-        //player.addXP(enemyXP);
+        player.addXP(enemyXP);
     }
         
     public static void displayStats() throws InterruptedException

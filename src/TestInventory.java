@@ -1,6 +1,6 @@
 public class TestInventory
 {
-    public static void testInventory(String[] args)
+    public static void test()
     {
         //Create objects (Items)
         Weapon MasterSword = new Weapon("Master Sword", "Weapon", 4);

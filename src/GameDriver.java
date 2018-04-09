@@ -1,10 +1,7 @@
-
-public class GameDriver 
+public class GameDriver
 {
-
-	public static void main(String[] args)
-	{
-		BattleScreen.createWindow();
-	}
-
+    public static void main(String[] args) throws InterruptedException
+    {
+        Intro.start();
+    }
 }
