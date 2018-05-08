@@ -21,10 +21,10 @@ public class Intro
    
    public static void start() throws InterruptedException
    {
-       System.out.println("Please note that this is only a Dev build of the game (1.2) and does not reflect the final version");
+       System.out.println("Please note that this is only a Dev build of the game (1.3.1) and does not reflect the final version");
        intro();
        tutorial();
-       text = thePlayer.displayEndStats();
+       choosePath();
        charText = text.toCharArray(); print(charText); delay(700);
        //ChoosePath();
    }
@@ -84,12 +84,13 @@ public class Intro
            charText = text.toCharArray(); print(charText); delay(700);
             
            String isCorrect = (userInput.nextLine().toLowerCase());
-           
-           if(isCorrect.equals("yes"))
+           System.out.println(isCorrect);
+          
+           if(isCorrect.equals("y"))
            {
                correctPlayerInfo = true;
            }
-           else 
+           else if(isCorrect.equals("n"))
            {
                text = ("I bet you would like to change your name then?");
                charText = text.toCharArray(); print(charText); delay(700);
@@ -203,7 +204,7 @@ public class Intro
        }
    }
    
-   public static void ChoosePath()throws InterruptedException
+   public static void choosePath()throws InterruptedException
    {
        boolean choosePath;
        String unchangedPlayerPath = "";
