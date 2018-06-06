@@ -223,7 +223,7 @@ public class Intro
            if(playerPath.equals("rainforest"))
            {
                choosePath = true;
-               //ForestPath.start();
+               Rain_Forest.start();
            }
            else if(playerPath.equals("island"))
            {
